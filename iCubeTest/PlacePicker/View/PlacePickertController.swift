@@ -62,7 +62,7 @@ extension PlacePickertController: PlacePickerDelegate {
             let longitude = Double(place.longitude ?? "0") ?? 0.0
             let annotation = MKPointAnnotation()
             annotation.title = place.name
-            annotation.subtitle = String(format: "SGD %d", place.price ?? 0)
+            annotation.subtitle = String(format: "Address: %@\nPrice: SGD %d\n", place.address ?? "", place.price ?? 0)
             annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             annotations.append(annotation)
         }
@@ -82,8 +82,16 @@ extension PlacePickertController: MKMapViewDelegate {
             return
         }
         
-        CustomAlert.showAlert(title: name ?? "" , message: subtitle ?? "", parent: self) {
-            
+        var place = places.filter{ (place) -> Bool in place.name == (name ?? "") }
+        
+        if place.count > 0 {
+            CustomAlert.showAlert(title: String(format: "Do you want to select %@?", name ?? ""), message: subtitle ?? "", parent: self, confirmCallback: { [weak self] in
+                place[0].isSelected = true
+                self?.tableView.reloadData()
+            }, cancelCallback: { [weak self] in
+                place[0].isSelected = false
+                self?.tableView.reloadData();
+            })
         }
     }
 }

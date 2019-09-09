@@ -15,6 +15,8 @@ struct PlaceData: Codable {
 struct Place: Codable {
     var id: Int?
     var name: String?
+    var type: String?
+    var address: String?
     var price: Int?
     var latitude: String?
     var longitude: String?

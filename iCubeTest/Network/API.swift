@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 struct APIConstant {
-    static let baseURL = "https://my-json-server.typicode.com/wiraone/iCubeTest"
+    static let baseURL = "https://my-json-server.typicode.com/wiraone/iCubeTest-iOS"
 }
 
 

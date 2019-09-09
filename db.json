@@ -4,6 +4,7 @@
         "id": 1,
         "name": "Noms Kopi",
         "type": "cafe",
+        "address": "Street number one"
         "price": 100,
         "latitude": "-6.9778288",
         "longitude":"110.4470717",
@@ -13,6 +14,7 @@
         "id": 2,
         "name": "Moment Coffee & Space",
         "type": "cafe",
+        "address": "Street number two"
         "price": 300,
         "latitude": "-7.020714",
         "longitude":"110.4102497",
@@ -22,6 +24,7 @@
         "id": 3,
         "name": "SALOKA Theme Park",
         "type": "theme_park",
+        "address": "Street number three"
         "price": 140,
         "latitude": "-7.2807262",
         "longitude":"110.4573652",
@@ -31,6 +34,7 @@
         "id": 4,
         "name": "Calombo golden sunset",
         "type": "theme_park",
+        "address": "Street number four"
         "price": 20,
         "latitude": "-7.2807262",
         "longitude":"110.4553892",
@@ -40,8 +44,9 @@
         "id": 5,
         "name": "Cafe Beno Rief",
         "type": "cafe",
+        "address": "Street number five"
         "price": 25,
-        "latitude": "7.2816478",
+        "latitude": "-7.2816478",
         "longitude":"110.4552251",
         "isSelected": false
     }]
