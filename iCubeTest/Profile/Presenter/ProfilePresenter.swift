@@ -22,20 +22,25 @@ class ProfilePresenter: ProfileInterface {
             return true
         }
         else {
-            errorMessage = "Email is required"
+            if let email = user.email, email.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count == 0  {
+                errorMessage = "Email is required"
+                return false
+            }
+            errorMessage = "Email is not valid"
             return false
+            
         }
     }
     
     func validateUsername(user: User) -> Bool {
         guard let name = user.name else {
-            errorMessage = "Name is required"
             return false
         }
         
         if name.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).count > 0 {
             return true
         }
+        errorMessage = "Name is required"
         return false
     }
     

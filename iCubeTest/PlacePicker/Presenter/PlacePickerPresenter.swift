@@ -19,7 +19,7 @@ class PlacePickerPresenter: PlacePickerInterface {
     func getPlaces() {
         let target = GoodBoyAPI.getPlaces
         let future = NetworkFuture<Data>()
-        let activityData = ActivityData.init(size: CGSize.init(width: 35, height: 35), type: NVActivityIndicatorType.ballGridPulse, color: .white, backgroundColor: .clear)
+        let activityData = ActivityData.init(size: CGSize.init(width: 35, height: 35), type: NVActivityIndicatorType.ballGridPulse, color: .black, backgroundColor: .clear)
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         
         future.request(target: target)
